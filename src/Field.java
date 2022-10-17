@@ -30,7 +30,22 @@ public class Field {
 				return koma;
 			}
 		}
+		return null;
 	}
 	
+	public void putKoma(int x, int y, String state) {
+		Koma koma = this.getKoma(x, y);
+		koma.setState(state);
+	}
+	
+	// 盤面上の状況を可視化してコマンドラインに出力するメソッド
+	public void feature() {
+		String[][] board = new String[ynum][xnum];
+		for(Koma koma : this.komalist) {
+			int[] pos = koma.getPosition();
+			String state = koma.getState();
+			board[pos[1]][pos[0]] = state;
+		}
+	}
 	
 }
