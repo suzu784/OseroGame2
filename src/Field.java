@@ -46,6 +46,15 @@ public class Field {
 			String state = koma.getState();
 			board[pos[1]][pos[0]] = state;
 		}
+		System.out.println("\\n\\t0\\t1\\t2\\t3\\t4\\t5\\n");
+		for(int y = 0; y < board.length; y++) {
+			System.out.println(y + "\\t");
+			for(int x = 0; x < board[0].length; x++) {
+				String b = board[y][x];
+				System.out.println(b + "\\t");
+			}
+			System.out.println("\\n");
+		}
 	}
 	
 }
